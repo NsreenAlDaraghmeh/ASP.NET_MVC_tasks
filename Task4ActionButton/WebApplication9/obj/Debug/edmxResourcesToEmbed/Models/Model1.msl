@@ -1,11 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="TaskMVCModelStoreContainer" CdmEntityContainer="TaskMVCEntities1">
+  <EntityContainerMapping StorageEntityContainer="task4ModelStoreContainer" CdmEntityContainer="task4Entities">
     <EntitySetMapping Name="TaskEmployees">
-      <EntityTypeMapping TypeName="TaskMVCModel.TaskEmployee">
+      <EntityTypeMapping TypeName="task4Model.TaskEmployee">
         <MappingFragment StoreEntitySet="TaskEmployees">
-          <ScalarProperty Name="CV" ColumnName="CV" />
-          <ScalarProperty Name="image" ColumnName="image" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="First_Name" ColumnName="First Name" />
           <ScalarProperty Name="Last_Name" ColumnName="Last Name" />
@@ -14,6 +12,8 @@
           <ScalarProperty Name="Age" ColumnName="Age" />
           <ScalarProperty Name="Job_Title" ColumnName="Job Title" />
           <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="CV" ColumnName="CV" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

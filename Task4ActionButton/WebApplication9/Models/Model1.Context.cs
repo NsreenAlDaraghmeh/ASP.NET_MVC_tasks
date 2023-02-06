@@ -13,10 +13,10 @@ namespace WebApplication9.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class TaskMVCEntities1 : DbContext
+    public partial class task4Entities : DbContext
     {
-        public TaskMVCEntities1()
-            : base("name=TaskMVCEntities1")
+        public task4Entities()
+            : base("name=task4Entities")
         {
         }
     

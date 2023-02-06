@@ -16,18 +16,18 @@ namespace WebApplication9.Controllers
 {
     public class TaskEmployeesController : Controller
     {
-        private TaskMVCEntities1 db = new TaskMVCEntities1();
+        private task4Entities db = new task4Entities();
 
         // GET: TaskEmployees
-        public ActionResult Index(string searchBy , string search)
+        public ActionResult Index(string searchBy, string search)
         {
             if (searchBy == "Gender")
             {
-                return View(db.TaskEmployees.Where(x => x.Gender.ToString()== "True" && search=="male" || x.Gender.ToString() == "False" && search == "female" || search ==null).ToList());
+                return View(db.TaskEmployees.Where(x => x.Gender.ToString() == "True" && search == "male" || x.Gender.ToString() == "False" && search == "female" || search == null).ToList());
             }
-            else if(searchBy == "FirstName")
+            else if (searchBy == "FirstName")
             {
-                return View(db.TaskEmployees.Where(x => x.First_Name.StartsWith( search) || search==null).ToList());
+                return View(db.TaskEmployees.Where(x => x.First_Name.StartsWith(search) || search == null).ToList());
 
             }
             else if (searchBy == "LastName")
@@ -35,7 +35,7 @@ namespace WebApplication9.Controllers
                 return View(db.TaskEmployees.Where(x => x.Last_Name.StartsWith(search) || search == null).ToList());
 
             }
-            else 
+            else
             {
                 return View(db.TaskEmployees.Where(x => x.Email.StartsWith(search) || search == null).ToList());
 
@@ -91,7 +91,7 @@ namespace WebApplication9.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpGet]
-        public ActionResult Create ()
+        public ActionResult Create()
         {
             return View();
         }
@@ -126,7 +126,7 @@ namespace WebApplication9.Controllers
                 return View(taskEmployee);
 
             }
-          
+
         }
 
         // GET: TaskEmployees/Edit/5

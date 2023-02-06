@@ -79,7 +79,7 @@
             @Html.LabelFor(model => model.image, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <input type="file" name="image" accept="PNG,jpg,jpeg,gif,tiff, bmp" />
-                @*@Html.DisplayFor(model => model.image, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.DisplayFor(model => model.image, new { htmlAttributes = new { @class = "form-control" } })
                 <img src="~/image/@Model.image" alt="@Model.image" width="100" />
 
                 @Html.ValidationMessageFor(model => model.image, "", new { @class = "text-danger" })

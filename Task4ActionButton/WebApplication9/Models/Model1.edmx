@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="TaskMVCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="task4Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="TaskEmployees">
           <Key>
             <PropertyRef Name="Id" />
@@ -20,13 +20,14 @@
           <Property Name="image" Type="varchar" MaxLength="255" />
           <Property Name="CV" Type="varchar" MaxLength="255" />
         </EntityType>
-        <EntityContainer Name="TaskMVCModelStoreContainer">
+        <EntityContainer Name="task4ModelStoreContainer">
           <EntitySet Name="TaskEmployees" EntityType="Self.TaskEmployees" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="TaskMVCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="task4Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="TaskEmployee">
           <Key>
             <PropertyRef Name="Id" />
@@ -42,7 +43,7 @@
           <Property Name="image" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="CV" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityContainer Name="TaskMVCEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="task4Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="TaskEmployees" EntityType="Self.TaskEmployee" />
         </EntityContainer>
       </Schema>
@@ -50,12 +51,10 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="TaskMVCModelStoreContainer" CdmEntityContainer="TaskMVCEntities1">
+        <EntityContainerMapping StorageEntityContainer="task4ModelStoreContainer" CdmEntityContainer="task4Entities">
           <EntitySetMapping Name="TaskEmployees">
-            <EntityTypeMapping TypeName="TaskMVCModel.TaskEmployee">
+            <EntityTypeMapping TypeName="task4Model.TaskEmployee">
               <MappingFragment StoreEntitySet="TaskEmployees">
-                <ScalarProperty Name="CV" ColumnName="CV" />
-                <ScalarProperty Name="image" ColumnName="image" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="First_Name" ColumnName="First Name" />
                 <ScalarProperty Name="Last_Name" ColumnName="Last Name" />
@@ -64,6 +63,8 @@
                 <ScalarProperty Name="Age" ColumnName="Age" />
                 <ScalarProperty Name="Job_Title" ColumnName="Job Title" />
                 <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="CV" ColumnName="CV" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
