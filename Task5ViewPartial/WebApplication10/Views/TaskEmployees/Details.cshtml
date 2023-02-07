@@ -63,23 +63,32 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Gender)
-        </dd>
+            @if (Model.Gender == true)
+            {
 
+
+                <span> Male </span>
+            }
+            else
+            {
+                <span>Female</span>
+            }
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.image)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.image)
+            <img src="~/image/@Model.image" alt="@Model.image" width="100" />
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.CV)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CV)
+            <a href='download' download="@Model.CV">
+                @Html.DisplayFor(model => Model.CV, new { htmlAttributes = new { @class = "form-control" } })
+            </a>
         </dd>
 
     </dl>

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication10", "WebApplication10\WebApplication10.csproj", "{441F6741-C259-404D-9FB8-097D7961AE43}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task5ViewPartial", "WebApplication10\Task5ViewPartial.csproj", "{441F6741-C259-404D-9FB8-097D7961AE43}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
