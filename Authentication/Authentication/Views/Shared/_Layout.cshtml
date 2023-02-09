@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Tailor | Template</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="~/site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="~/assets/img/favicon.ico">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/assets/css/slicknav.css">
+    <link rel="stylesheet" href="~/assets/css/flaticon.css">
+    <link rel="stylesheet" href="~/assets/css/progressbar_barfiller.css">
+    <link rel="stylesheet" href="~/assets/css/gijgo.css">
+    <link rel="stylesheet" href="~/assets/css/animate.min.css">
+    <link rel="stylesheet" href="~/assets/css/animated-headline.css">
+    <link rel="stylesheet" href="~/assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="~/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="~/assets/css/slick.css">
+    <link rel="stylesheet" href="~/assets/css/nice-select.css">
+    <link rel="stylesheet" href="~/assets/css/style.css">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+@*<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>*@
+
+
+
+
+
+<body>
+
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="~/assets/img/logo/loder.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start-->
+    <header>
+        <!-- Header Start -->
+        <div class="header-area header_area">
+            <div class="main-header">
+                <div class="header-bottom header-sticky">
+                    <!-- Logo -->
+                    <div class="logo">
+                        @*@Html.ActionLink("Tailor", "Index", "Home", new { area = "" }, new { @class = "text-dark navbar-brand" })*@
+
+                        <a href="~/Home/Index"><img src="~/assets/img/logo/logo.png" alt=""></a>
+                    </div>
+                    <div class="header-left  d-flex f-right align-items-center">
+                        <!-- Main-menu -->
+                        <div class="main-menu f-right d-none d-lg-block">
+                            <nav>
+                                <ul id="navigation">
+                                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                                    @if (User.Identity.IsAuthenticated)
+                                    {
+                                        <li>@Html.ActionLink("Categories", "Categories", "Home")</li>
+                                        if (User.IsInRole("Admin"))
+                                        {
+                                            <li>@Html.ActionLink("AspNetRoles", "Index", "AspNetRoles")</li>
+                                            <li>@Html.ActionLink("AspNetUserRoles", "Index", "AspNetUserRoles")</li>
+                                        }
+
+
+
+                                    }
+
+
+                                    @Html.Partial("_LoginPartial")
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- left Btn -->
+                        <div class="header-right-btn f-right d-none d-lg-block  ml-30">
+                            <a href="#" class="header-btn">Visit Us</a>
+                        </div>
+                    </div>
+                    <!-- Mobile Menu -->
+                    <div class="col-12">
+                        <div class="mobile_menu d-block d-lg-none"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+    </header>
+
+
+
+
+
+
+
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+<script src="~/assets/js/vendor/modernizr-3.5.0.min.js"></script>
+<!-- Jquery, Popper, Bootstrap -->
+<script src="~/assets/js/vendor/jquery-1.12.4.min.js"></script>
+<script src="~/assets/js/popper.min.js"></script>
+<script src="~/assets/js/bootstrap.min.js"></script>
+<!-- Jquery Mobile Menu -->
+<script src="~/assets/js/jquery.slicknav.min.js"></script>
+
+<!-- Jquery Slick , Owl-Carousel Plugins -->
+<script src="~/assets/js/owl.carousel.min.js"></script>
+<script src="~/assets/js/slick.min.js"></script>
+<!-- One Page, Animated-HeadLin -->
+<script src="~/assets/js/wow.min.js"></script>
+<script src="~/assets/js/animated.headline.js"></script>
+<script src="~/assets/js/jquery.magnific-popup.js"></script>
+
+<!-- Date Picker -->
+<script src="~/assets/js/gijgo.min.js"></script>
+<!-- Nice-select, sticky -->
+<script src="~/assets/js/jquery.nice-select.min.js"></script>
+<script src="~/assets/js/jquery.sticky.js"></script>
+<!-- Progress -->
+<script src="~/assets/js/jquery.barfiller.js"></script>
+
+<!-- counter , waypoint,Hover Direction -->
+<script src="~/assets/js/jquery.counterup.min.js"></script>
+<script src="~/assets/js/waypoints.min.js"></script>
+<script src="~/assets/js/jquery.countdown.min.js"></script>
+<script src="~/assets/js/hover-direction-snake.min.js"></script>
+
+<!-- contact js -->
+<script src="~/assets/js/contact.js"></script>
+<script src="~/assets/js/jquery.form.js"></script>
+<script src="~/assets/js/jquery.validate.min.js"></script>
+<script src="~/assets/js/mail-script.js"></script>
+<script src="~/assets/js/jquery.ajaxchimp.min.js"></script>
+
+<!-- Jquery Plugins, main Jquery -->
+<script src="~/assets/js/plugins.js"></script>
+<script src="~/assets/js/main.js"></script>
+
+</html>

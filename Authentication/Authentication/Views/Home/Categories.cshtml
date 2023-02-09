@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Ctegories";
+}
+
+<h2>Ctegories</h2>
+@model IEnumerable<Authentication.Models.Category>
+
+
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryPic)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryDetailes)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryPic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryDetailes)
+            </td>
+            <td>
+                @Html.ActionLink("Categories/Edit", "EditCat", new { id = item.CategoryId }) |
+                @Html.ActionLink("Categories/Details", "DetailsCat", new { id = item.CategoryId }) |
+                @Html.ActionLink("Categories/Delete", "DeleteCat", new { id = item.CategoryId })
+            </td>
+        </tr>
+    }
+
+</table>
