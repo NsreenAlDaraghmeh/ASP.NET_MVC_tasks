@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "View";
+}
+
+<h2>View</h2>
+<div id="tb">
+
+</div>
+
+<script>
+async function read() {
+            try {
+                const api = "https://localhost:44387/api/Faculties";
+                const res = await fetch(api);
+                const data = await res.json();
+
+                console.log(data);
+                readdata(data);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        function readdata(data) {
+            for (let i = 0; i < data.length; i++) {
+
+                document.getElementById('tb').innerHTML +=
+                    "<div class='clients-area section-padding40'>"+
+                        "<div class='row'> "+                          
+                                "<div class='col-lg-4 col-md-6 col-sm-6'>"+
+                                   " <div class='single-offers mb-50 wow fadeInUp data-wow-delay='.2s''>"+
+                                       " <div class='offers-img'>"+
+                    " <img src='"+data[i].image+"' alt=''></div>" +
+                        "<div class='offers-cap'><span>"+data[i].Name+"</span>"+
+                                            "<h3><a href='/Home/Index/"+data[i]+"'></a></h3>+</div></div></div></div></div></div>"
+
+            }
+        }
+        read();</script>
